@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Core brand colors */
+  --pexl-cyan: 0, 240, 255;      /* Our signature glow */
+  --pexl-black: 10, 10, 10;      /* Deep void */
+  --pexl-accent: 197, 165, 114;  /* Mystery gold */
+  --matrix-green: 0, 255, 65;    /* Data streams */
+}
+
+/* Dark mode by default - this is our realm */
+body {
+  color: rgb(var(--pexl-cyan));
+  background-color: rgb(var(--pexl-black));
+  font-family: 'JetBrains Mono', monospace; /* Tech-forward font */
+}
+
+/* Mysterious hover effects */
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  text-shadow: 0 0 8px rgba(var(--pexl-cyan), 0.8);
+  cursor: pointer;
+}
+
+/* Matrix rain animation */
+@keyframes matrix {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.animate-matrix {
+  animation: matrix 20s linear infinite;
+}
+
+/* Glitch effect */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+    text-shadow: 2px 0 rgb(var(--matrix-green));
+  }
+  40% {
+    transform: translate(-2px, -2px);
+    text-shadow: -2px 0 rgb(var(--pexl-cyan));
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+    text-shadow: 2px 0 rgb(var(--pexl-accent));
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.glitch-text {
+  position: relative;
+  animation: glitch 3s infinite;
+}
+
+/* Scanline effect */
+.scanline {
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(var(--pexl-cyan), 0.1) 51%
+  );
+  background-size: 100% 4px;
+  animation: scanline 10s linear infinite;
+}
+
+@keyframes scanline {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
