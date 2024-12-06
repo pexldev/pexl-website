@@ -1,7 +1,7 @@
 import '@fontsource/jetbrains-mono'
 import type { Metadata } from 'next'
 import './globals.css'
-
+import '@fontsource/inter' 
 export const metadata: Metadata = {
   title: 'PEXL Protocol',
   description: 'Decode Your Nutrition',
