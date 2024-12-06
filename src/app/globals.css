@@ -3,90 +3,105 @@
 @tailwind utilities;
 
 :root {
-  /* Core brand colors */
-  --pexl-cyan: 0, 240, 255;      /* Our signature glow */
-  --pexl-black: 10, 10, 10;      /* Deep void */
-  --pexl-accent: 197, 165, 114;  /* Mystery gold */
-  --matrix-green: 0, 255, 65;    /* Data streams */
+  /* Core brand colors - keeping the original palette but adding new variants */
+  --pexl-cyan: 0, 240, 255;      /* Primary brand color */
+  --pexl-black: 10, 10, 10;      /* Deep background */
+  --pexl-accent: 197, 165, 114;  /* Accent color */
+  
+  /* New color variables for gradients and overlays */
+  --cyan-light: 178, 245, 255;
+  --cyan-dark: 0, 190, 255;
 }
 
-/* Dark mode by default - this is our realm */
+/* Base styles */
 body {
   color: rgb(var(--pexl-cyan));
   background-color: rgb(var(--pexl-black));
-  font-family: 'JetBrains Mono', monospace; /* Tech-forward font */
+  font-family: 'JetBrains Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Mysterious hover effects */
-.hover-glow {
-  transition: all 0.3s ease;
+/* Smooth hover transitions */
+.transition-all {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hover-glow:hover {
-  text-shadow: 0 0 8px rgba(var(--pexl-cyan), 0.8);
-  cursor: pointer;
-}
-
-/* Matrix rain animation */
-@keyframes matrix {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(100%);
-  }
-}
-
-.animate-matrix {
-  animation: matrix 20s linear infinite;
-}
-
-/* Glitch effect */
-@keyframes glitch {
-  0% {
-    transform: translate(0);
-  }
-  20% {
-    transform: translate(-2px, 2px);
-    text-shadow: 2px 0 rgb(var(--matrix-green));
-  }
-  40% {
-    transform: translate(-2px, -2px);
-    text-shadow: -2px 0 rgb(var(--pexl-cyan));
-  }
-  60% {
-    transform: translate(2px, 2px);
-  }
-  80% {
-    transform: translate(2px, -2px);
-    text-shadow: 2px 0 rgb(var(--pexl-accent));
-  }
-  100% {
-    transform: translate(0);
-  }
-}
-
-.glitch-text {
-  position: relative;
-  animation: glitch 3s infinite;
-}
-
-/* Scanline effect */
-.scanline {
+/* Gradient text effect */
+.bg-gradient-text {
   background: linear-gradient(
-    to bottom,
-    transparent 50%,
-    rgba(var(--pexl-cyan), 0.1) 51%
+    to right,
+    rgb(var(--pexl-cyan)),
+    rgb(var(--cyan-light))
   );
-  background-size: 100% 4px;
-  animation: scanline 10s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-@keyframes scanline {
-  0% {
-    background-position: 0 0;
+/* Input focus styles */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-cyan-400/20 focus:border-cyan-400;
+}
+
+/* Button hover effect */
+.button-glow:hover {
+  box-shadow: 0 0 20px rgba(var(--pexl-cyan), 0.3);
+  transform: translateY(-1px);
+}
+
+/* Subtle grid background */
+.grid-background {
+  background-image: 
+    linear-gradient(to right, rgba(var(--pexl-cyan), 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(var(--pexl-cyan), 0.1) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  100% {
-    background-position: 0 100%;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Form element styles */
+input[type="email"] {
+  @apply bg-black/50 backdrop-blur-sm border border-cyan-500/30 text-cyan-100 px-4 py-3 rounded-lg;
+  @apply focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20;
+  @apply transition-all duration-300;
+}
+
+button[type="submit"] {
+  @apply bg-cyan-500 text-black font-medium py-3 rounded-lg;
+  @apply hover:bg-cyan-400 transition-colors duration-300;
+  @apply focus:outline-none focus:ring-2 focus:ring-cyan-400/20;
+}
+
+/* Status message styles */
+.status-message {
+  @apply text-sm text-cyan-400/90;
+  @apply animate-fade-in;
+}
+
+/* Trust indicator styles */
+.trust-indicator {
+  @apply text-sm text-cyan-400/60;
+  @apply flex items-center justify-center gap-2;
+}
+
+/* Logo glow effect */
+.logo-glow {
+  filter: drop-shadow(0 0 10px rgba(var(--pexl-cyan), 0.3));
+}
+
+/* Remove old matrix and glitch effects since we're going for a cleaner look */
