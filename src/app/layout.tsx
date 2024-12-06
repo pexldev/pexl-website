@@ -1,10 +1,10 @@
-import '@fontsource/jetbrains-mono'
+import '@fontsource/inter'  // Add this line
 import type { Metadata } from 'next'
 import './globals.css'
-import '@fontsource/inter' 
+
 export const metadata: Metadata = {
-  title: 'PEXL Protocol',
-  description: 'Decode Your Nutrition',
+  title: 'pexl | Your Health Journey',
+  description: 'Transform your nutrition data into clear, actionable insights.',
 }
 
 export default function RootLayout({
@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="antialiased">{children}</body>
     </html>
   )
 }
