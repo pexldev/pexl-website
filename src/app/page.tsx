@@ -1,7 +1,5 @@
-'use client';
-
 import { useState, useEffect } from 'react';
-import { Eye, Lock, ChevronRight } from 'lucide-react';
+import { Lock, ChevronRight } from 'lucide-react';
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
@@ -10,14 +8,7 @@ export default function Home() {
   const [initPhase, setInitPhase] = useState(0);
   const phases = ['Initializing', 'Connecting', 'Ready'];
 
-
   useEffect(() => {
-    const phases = [
-      'Initializing',
-      'Connecting',
-      'Ready'
-    ];
-    
     const interval = setInterval(() => {
       setInitPhase(prev => (prev < phases.length - 1 ? prev + 1 : prev));
     }, 800);
@@ -53,27 +44,19 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-8 relative bg-gradient-to-b from-gray-900 to-black text-cyan-400">
-      {/* Subtle grid background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#222_1px,transparent_1px),linear-gradient(to_bottom,#222_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
-
+    <main className="flex min-h-screen flex-col items-center justify-center p-8 relative bg-white">
       <div className="z-10 max-w-xl w-full space-y-12 text-center relative">
         {/* Brand section */}
         <div className="space-y-6">
-          <div className="relative inline-block">
-            <Eye className="w-12 h-12 mx-auto transition-all hover:text-cyan-300" />
-            <div className="absolute -inset-2 bg-cyan-500/20 blur-xl rounded-full -z-10"></div>
-          </div>
-          
-          <h1 className="text-5xl font-bold tracking-tight bg-gradient-to-r from-cyan-400 to-cyan-200 bg-clip-text text-transparent">
-            PEXL
+          <h1 className="text-5xl font-bold tracking-tight text-gray-900">
+            pexl
           </h1>
           
-          <p className="text-lg text-cyan-100 font-light">
+          <p className="text-xl text-gray-600">
             Your AI-powered nutrition companion
           </p>
           
-          <div className="text-sm text-cyan-300/70">
+          <div className="text-sm text-gray-500">
             {loaded ? 'System Ready' : phases[initPhase]}
           </div>
         </div>
@@ -81,8 +64,8 @@ export default function Home() {
         {/* Main content */}
         <div className="space-y-8">
           <div className="space-y-4">
-            <h2 className="text-2xl font-light">Decode Your Health Journey</h2>
-            <p className="text-cyan-300/70 max-w-md mx-auto">
+            <h2 className="text-3xl font-light text-gray-900">Decode Your Health Journey</h2>
+            <p className="text-gray-600 text-lg max-w-md mx-auto">
               Join our community of health enthusiasts and get early access to our revolutionary nutrition tracking platform.
             </p>
           </div>
@@ -95,16 +78,16 @@ export default function Home() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="w-full bg-black/50 backdrop-blur-sm border border-cyan-500/30 text-cyan-100 px-4 py-3 rounded-lg font-light
-                         focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all"
+                className="w-full bg-gray-50 border border-gray-200 text-gray-900 px-4 py-3 rounded-lg
+                         focus:outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20 transition-all"
                 required
               />
             </div>
             
             <button
               type="submit"
-              className="w-full bg-cyan-500 text-black py-3 rounded-lg font-medium inline-flex items-center justify-center gap-2
-                       hover:bg-cyan-400 transition-colors group"
+              className="w-full bg-sky-500 text-white py-3 rounded-lg font-medium inline-flex items-center justify-center gap-2
+                       hover:bg-sky-400 transition-colors group"
             >
               Get Early Access
               <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -112,14 +95,14 @@ export default function Home() {
           </form>
 
           {message && (
-            <div className="text-sm text-cyan-400/90 animate-fade-in">
+            <div className="text-sm text-gray-600 animate-fade-in">
               {message}
             </div>
           )}
         </div>
 
         {/* Trust indicator */}
-        <div className="text-sm text-cyan-400/60 flex items-center justify-center gap-2">
+        <div className="text-sm text-gray-500 flex items-center justify-center gap-2">
           <Lock className="w-4 h-4" />
           Your data is secure with us
         </div>

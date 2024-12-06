@@ -3,105 +3,64 @@
 @tailwind utilities;
 
 :root {
-  /* Core brand colors - keeping the original palette but adding new variants */
-  --pexl-cyan: 0, 240, 255;      /* Primary brand color */
-  --pexl-black: 10, 10, 10;      /* Deep background */
-  --pexl-accent: 197, 165, 114;  /* Accent color */
+  /* Clean, minimal color palette */
+  --pexl-primary: 56, 189, 248;    /* Soft blue */
+  --pexl-black: 0, 0, 0;           /* Pure black for text */
+  --pexl-accent: 197, 165, 114;    /* Warm accent */
   
-  /* New color variables for gradients and overlays */
-  --cyan-light: 178, 245, 255;
-  --cyan-dark: 0, 190, 255;
+  /* New color variables */
+  --primary-light: 186, 230, 253;
+  --primary-dark: 2, 132, 199;
 }
 
 /* Base styles */
 body {
-  color: rgb(var(--pexl-cyan));
-  background-color: rgb(var(--pexl-black));
-  font-family: 'JetBrains Mono', monospace;
+  color: rgb(var(--pexl-black));
+  background-color: white;
+  font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Smooth hover transitions */
+/* Smooth transitions */
 .transition-all {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Gradient text effect */
+/* Text gradient effect */
 .bg-gradient-text {
   background: linear-gradient(
     to right,
-    rgb(var(--pexl-cyan)),
-    rgb(var(--cyan-light))
+    rgb(var(--primary-dark)),
+    rgb(var(--pexl-primary))
   );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-/* Input focus styles */
-.focus-ring {
-  @apply focus:outline-none focus:ring-2 focus:ring-cyan-400/20 focus:border-cyan-400;
-}
-
-/* Button hover effect */
-.button-glow:hover {
-  box-shadow: 0 0 20px rgba(var(--pexl-cyan), 0.3);
-  transform: translateY(-1px);
-}
-
-/* Subtle grid background */
-.grid-background {
-  background-image: 
-    linear-gradient(to right, rgba(var(--pexl-cyan), 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(var(--pexl-cyan), 0.1) 1px, transparent 1px);
-  background-size: 4rem 4rem;
-}
-
-/* Fade in animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.5s ease-out forwards;
-}
-
-/* Form element styles */
+/* Input styles */
 input[type="email"] {
-  @apply bg-black/50 backdrop-blur-sm border border-cyan-500/30 text-cyan-100 px-4 py-3 rounded-lg;
-  @apply focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20;
+  @apply bg-gray-50 border border-gray-200 text-gray-900 px-4 py-3 rounded-lg;
+  @apply focus:outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20;
   @apply transition-all duration-300;
 }
 
+/* Button styles */
 button[type="submit"] {
-  @apply bg-cyan-500 text-black font-medium py-3 rounded-lg;
-  @apply hover:bg-cyan-400 transition-colors duration-300;
-  @apply focus:outline-none focus:ring-2 focus:ring-cyan-400/20;
+  @apply bg-sky-500 text-white font-medium py-3 rounded-lg;
+  @apply hover:bg-sky-400 transition-colors duration-300;
+  @apply focus:outline-none focus:ring-2 focus:ring-sky-400/20;
 }
 
 /* Status message styles */
 .status-message {
-  @apply text-sm text-cyan-400/90;
+  @apply text-sm text-gray-600;
   @apply animate-fade-in;
 }
 
 /* Trust indicator styles */
 .trust-indicator {
-  @apply text-sm text-cyan-400/60;
+  @apply text-sm text-gray-500;
   @apply flex items-center justify-center gap-2;
 }
-
-/* Logo glow effect */
-.logo-glow {
-  filter: drop-shadow(0 0 10px rgba(var(--pexl-cyan), 0.3));
-}
-
-/* Remove old matrix and glitch effects since we're going for a cleaner look */
