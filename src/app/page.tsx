@@ -1,7 +1,6 @@
-'use client';  // This fixes the useState and useEffect errors
+'use client';
 
 import { useState } from 'react';
-import { Eye } from 'lucide-react';
 
 export default function Home() {
   const [email, setEmail] = useState('');
@@ -17,7 +16,7 @@ export default function Home() {
       });
 
       if (response.ok) {
-        setMessage('Welcome to PEXL! Check your inbox for next steps.');
+        setMessage('Welcome to pexl! Check your inbox for next steps.');
         setEmail('');
       } else {
         setMessage('Something went wrong. Please try again.');
@@ -30,13 +29,10 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-50 to-slate-50 p-6">
       <div className="max-w-4xl mx-auto pt-12 pb-20">
-        {/* Modern Header */}
+        {/* Refined Header */}
         <div className="text-center mb-16">
-          <div className="inline-block p-3 bg-blue-100 rounded-full mb-6 hover:bg-blue-200 transition-colors">
-            <Eye className="w-8 h-8 text-blue-600" />
-          </div>
-          <h1 className="text-4xl font-bold mb-4 text-slate-900">PEXL</h1>
-          <p className="text-lg text-slate-600">Decode Your Health Journey</p>
+          <h1 className="text-4xl font-semibold mb-4 text-slate-900">pexl</h1>
+          <p className="text-lg text-slate-600">Decode your health journey</p>
         </div>
 
         {/* Feature Highlights */}
