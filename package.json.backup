@@ -15,8 +15,8 @@
     "mongodb": "^6.11.0",
     "next": "15.0.3",
     "rate-limiter-flexible": "^5.0.4",
-    "react": "^19.0.0-rc-66855b96-20241106",
-    "react-dom": "^19.0.0-rc-66855b96-20241106",
+    "react": "19.0.0-rc-66855b96-20241106",
+    "react-dom": "19.0.0-rc-66855b96-20241106",
     "react-icons": "^5.4.0",
     "validator": "^13.12.0",
     "zod": "^3.23.8"
@@ -27,7 +27,12 @@
     "@types/react-dom": "^18",
     "@types/validator": "^13.12.2",
     "@typescript-eslint/eslint-plugin": "^8.17.0",
+<<<<<<< HEAD
+    "@typescript-eslint/parser": "^8.17.0",
+    "eslint": "^8.57.1",
+=======
     "eslint": "^8",
+>>>>>>> 166b3a871437531f59aeffd65e9d43475221be9d
     "eslint-config-next": "15.0.3",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
