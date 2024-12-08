@@ -1,6 +1,6 @@
-import { ArrowRight } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
+import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 // Keep our interfaces neat and organized at the top
 interface Author {
@@ -14,23 +14,23 @@ interface UpdateCardProps {
   date: string;
   title: string;
   description: string;
-  category: "Technology" | "Food" | "Health" | "Feature";
+  category: 'Technology' | 'Food' | 'Health' | 'Feature';
   author: Author;
   image?: string;
 }
 
 const UpdateCard = ({ id, title, description, category, author, image }: UpdateCardProps) => {
   // Fallback images - always good to have a backup plan! 🎯
-  const avatarSrc = author.avatar || "/images/default-avatar.png";
-  const cardImage = image || "/images/Our-website-is-live.png";
+  const avatarSrc = author.avatar || '/images/default-avatar.png';
+  const cardImage = image || '/images/Our-website-is-live.png';
   
   // Our styling helper - keeping things clean and organized
   const getCategoryStyle = (category: string) => {
     const styles = {
-      Technology: "bg-blue-600/15 text-blue-500 border-blue-600/25 hover:bg-blue-600/20",
-      Food: "bg-orange-500/10 text-orange-400 border-orange-500/20",
-      Health: "bg-green-500/10 text-green-400 border-green-500/20",
-      Feature: "bg-purple-500/10 text-purple-400 border-purple-500/20"
+      Technology: 'bg-blue-600/15 text-blue-500 border-blue-600/25 hover:bg-blue-600/20',
+      Food: 'bg-orange-500/10 text-orange-400 border-orange-500/20',
+      Health: 'bg-green-500/10 text-green-400 border-green-500/20',
+      Feature: 'bg-purple-500/10 text-purple-400 border-purple-500/20'
     };
     return styles[category as keyof typeof styles] || styles.Feature;
   };

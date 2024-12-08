@@ -1,30 +1,30 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { useState } from 'react';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 export default function Home() {
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
       });
 
       if (response.ok) {
-        setMessage("INITIALIZATION SEQUENCE COMPLETE");
-        setEmail("");
+        setMessage('INITIALIZATION SEQUENCE COMPLETE');
+        setEmail('');
       } else {
-        setMessage("SEQUENCE FAILED // PLEASE RETRY");
+        setMessage('SEQUENCE FAILED // PLEASE RETRY');
       }
     } catch {
-      setMessage("CONNECTION LOST // RETRY SEQUENCE");
+      setMessage('CONNECTION LOST // RETRY SEQUENCE');
     }
   };
 

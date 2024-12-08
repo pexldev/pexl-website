@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import React from "react";
-import { Mail, Github, Twitter } from "lucide-react";
-import { SiReddit } from "react-icons/si";
-import Image from "next/image";
+import React from 'react';
+import { Mail, Github, Twitter } from 'lucide-react';
+import { SiReddit } from 'react-icons/si';
+import Image from 'next/image';
 
-const GITHUB_LINK = process.env.NEXT_PUBLIC_GITHUB_LINK || "https://google.com";
-const TWITTER_LINK = process.env.NEXT_PUBLIC_TWITTER_LINK || "https://twitter.com";
-const REDDIT_LINK = process.env.NEXT_PUBLIC_REDDIT_LINK || "https://reddit.com";
-const GMAIL_LINK = process.env.NEXT_PUBLIC_GMAIL_LINK || "https://gmail.com";
+const GITHUB_LINK = process.env.NEXT_PUBLIC_GITHUB_LINK || 'https://google.com';
+const TWITTER_LINK = process.env.NEXT_PUBLIC_TWITTER_LINK || 'https://twitter.com';
+const REDDIT_LINK = process.env.NEXT_PUBLIC_REDDIT_LINK || 'https://reddit.com';
+const GMAIL_LINK = process.env.NEXT_PUBLIC_GMAIL_LINK || 'https://gmail.com';
 
-console.log("Environment Variables:", {
+console.log('Environment Variables:', {
     github: process.env.NEXT_PUBLIC_GITHUB_LINK,
     twitter: process.env.NEXT_PUBLIC_TWITTER_LINK,
     reddit: process.env.NEXT_PUBLIC_REDDIT_LINK,
@@ -89,7 +89,7 @@ const ContactSection = () => {
                            hover:shadow-xl hover:shadow-blue-500/20"
                 >
                   <Mail className="w-5 h-5" />
-                  <span>{GMAIL_LINK.replace("mailto:", "")}</span>
+                  <span>{GMAIL_LINK.replace('mailto:', '')}</span>
                 </a>
               </div>
             </div>

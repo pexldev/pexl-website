@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
-import UpdateCard from "./components/UpdateCard"
-import { updates } from "./data/udpateData";
+import { ArrowLeft } from 'lucide-react';
+import Link from 'next/link';
+import UpdateCard from './components/UpdateCard'
+import { updates } from './data/udpateData';
 
 export default function LiveUpdates() {
   return (
