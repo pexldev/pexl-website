@@ -21,7 +21,10 @@ interface BlogPost {
 }
 
 export default function BlogPost({ params }: { params: { id: string } }) {
+
+    
   const [imageLoading, setImageLoading] = useState(true);
+  
   
   const post: BlogPost = {
     title: "pexl.xyz is Now Live - Your Journey to Better Health Begins Here",
