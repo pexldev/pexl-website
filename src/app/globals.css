@@ -2,20 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --blue-primary: 37, 99, 235;
+    --slate-dark: 15, 23, 42;
+  }
+
+  body {
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .transition-smooth {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50;
+  }
+
+  .hover-lift {
+    @apply hover:-translate-y-0.5 transition-transform duration-200;
+  }
+
+  /* Health tech specific utilities */
+  .health-gradient {
+    @apply bg-gradient-to-br from-blue-500/10 to-transparent;
+  }
+
+  .card-health {
+    @apply bg-slate-800/50 backdrop-blur-sm border border-slate-700 hover:border-blue-500/50 transition-all duration-300;
+  }
 }
