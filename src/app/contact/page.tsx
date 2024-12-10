@@ -9,10 +9,10 @@ import { SiReddit } from "react-icons/si";
 import Image from "next/image";
 import Link from "next/link";
 
-const GITHUB_LINK = process.env.NEXT_PUBLIC_GITHUB_LINK || "https://github.com/pexldev";
+const GITHUB_LINK = process.env.NEXT_PUBLIC_GITHUB_LINK || "https://github.com";
 const TWITTER_LINK = process.env.NEXT_PUBLIC_TWITTER_LINK || "https://twitter.com";
 const REDDIT_LINK = process.env.NEXT_PUBLIC_REDDIT_LINK || "https://reddit.com";
-const GMAIL_LINK = process.env.NEXT_PUBLIC_GMAIL_LINK || "contact@pexl.com";
+const GMAIL_LINK = process.env.NEXT_PUBLIC_GMAIL_LINK || "pexldev@gmail.com";
 
 interface SocialLinkProps {
   href: string;
