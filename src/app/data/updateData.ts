@@ -26,7 +26,7 @@ export interface UpdateCard {
         avatar: "/images/default-avatar.png",
         timeAgo: "2h ago"
       },
-      image: "/images/Our-Website-is-live.png"
+      image: "/images/blog1.png"
     },
     
     // Add more updates here as needed

@@ -35,7 +35,7 @@ export interface BlogPost {
         role: "Founder",
         timeAgo: "2h ago"
       },
-      image: "/images/Our-Website-is-live.png",
+      image: "/images/blog1.png",
       content: [
         {
           "type": "paragraph",
